@@ -1,0 +1,33 @@
+/* General Styles */
+body { font-family: Arial, sans-serif; margin: 0; scroll-behavior: smooth; background-color: #f4f4f4; }
+.section { padding: 80px 20px; max-width: 900px; margin: auto; text-align: center; }
+
+/* Navbar */
+.navbar {
+    background: #2c3e50; color: white; padding: 1rem;
+    position: fixed; width: 100%; top: 0; display: flex;
+    justify-content: space-around; align-items: center; z-index: 1000;
+}
+.navbar ul { list-style: none; display: flex; gap: 20px; }
+.navbar a { color: white; text-decoration: none; font-weight: bold; }
+
+/* Home/Banner */
+.banner { background: #3498db; color: white; }
+.media-container { margin-top: 20px; }
+
+/* Table Styling */
+table { width: 100%; border-collapse: collapse; margin-top: 20px; background: white; }
+th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+th { background-color: #2c3e50; color: white; }
+
+/* Form Styling */
+.reg-form { display: flex; flex-direction: column; gap: 15px; max-width: 400px; margin: auto; }
+input, select, textarea { padding: 10px; border: 1px solid #ccc; border-radius: 5px; }
+button { background: #27ae60; color: white; padding: 10px; border: none; cursor: pointer; border-radius: 5px; }
+button:hover { background: #219150; }
+.img[alt="collage-img"] {
+     width: 400px; 
+        height: 400px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
