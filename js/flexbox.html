@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <STYle>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        nav{
+            border: 2px solid rgb(176, 23, 199);
+            height: ;
+        }
+        ol{background-color: rgb(234, 132, 250);
+            height: 150px;
+            border: 2px solid rgb(201, 211, 84);
+            display: flex;
+            justify-content:space-around;
+            align-items: center;
+            flex-direction: row;
+            list-style: none;
+            
+        }
+        li{
+            color:rgb(10, 15, 20);
+            background-color:rgb(212, 182, 182);
+            text-shadow: 2px 2px 2px black;
+            font-style: italic;
+            border-radius: 8px;
+            flex-grow: 1;
+            margin: 0px 30px;
+            text-align: center;
+            font-weight: bold;
+            padding: 10px;
+        }
+        #electronic-devices{
+            border: 4px solid rgb(188, 113, 201);  
+            display: flex;  
+             flex-wrap: wrap;
+             justify-content: space-evenly;
+             align-items: center;
+             position: relative;
+             top: -152px;
+             backdrop-filter: blur(2px);
+             border-radius: 5px;
+
+        }
+        #electronic-devices>div{
+            height: 450px;
+            width: 350px;
+            border:5px solid pink;
+            margin: 20px;
+            flex-direction: column;
+            border-radius: 20px;
+            padding: 10px 20px;
+            background-color: pink;
+        }
+        h1{
+            position: relative;
+            top: -150px;
+            text-align: center;
+            animation-name: scaling;
+            animation-duration: 5s;
+        }
+        .btn-container>button{
+            margin: 0px 20px;
+            padding: 10px 35px;
+            border: none;
+            font-weight: bold;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            border-radius: 20px;
+            
+        }  
+        #laptop>img{
+            height: 250px;
+            width: 350px;
+            border-radius: 10px;
+             margin-bottom: 20px;
+        }
+        #laptop>img:hover{
+            transform: scale(1.1);
+            box-shadow: 2px 2px;
+            cursor: pointer;
+        }
+
+        #electronic-devices-id{
+            position: relative; 
+            bottom: 200px;
+            left:2px;
+            z-index: 1;
+            font-style: oblique;
+            font-size: 40px;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
+        #electronic-devices-id:hover{
+            text-decoration: underline;
+            text-shadow: 2px 2px 2px aliceblue;
+            color: pink;
+            cursor: pointer;
+        }
+        aside img{
+            height: 50px;
+            width: 50px;
+            border-radius: 40;
+        }
+        aside img:hover{
+            transform: scale(1.2);
+            cursor: pointer;
+            backdrop-filter: blur(50px);
+            box-shadow: 2px 2px 8px black;
+        }
+        aside{
+            border: 2px solid black;
+            padding: 10px;
+            display: inline-flex;
+            margin-left: 12px;
+            border-radius: 100px;
+            flex-direction: column;
+            position: relative;
+            top: -1500px;
+            z-index: 1;
+            justify-content: space-evenly;
+            margin-left: 10px;
+            height: 200px;
+        }
+        @keyframes scaling{
+            0%{
+                transform: scale(0);
+            }
+            25%{
+                transform: rotate(0deg);
+            }
+            75%{
+                transform: rotate(360deg);
+            }
+            100%{
+                transform: scale(1);
+            }
+        }
+        body{
+            background-color: rgb(232, 222, 173);
+            animation-name: bgcolorchange;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+            animation-delay: 2s;
+        }
+        @keyframes bgcolorchange{
+            0%{
+                background-color: rgb(232, 222, 173);
+            }
+            25%{
+                background-color: rgb(184, 106, 106);
+            }
+            50%{
+                background-color: rgb(170, 229, 170);
+            }
+            75%{
+                background-color: rgb(168, 168, 233);
+            }
+            100%{
+                background-color: rgb(182, 231, 231);
+            }
+        }
+        
+    </STYle>
+</head>
+<body>
+    <nav>
+        <ol>
+            <li>HOME</li>
+            <li>ABOUT</li>
+            <li>CONTACT</li>
+            <li>LOG IN</li>
+
+        </ol>
+    </nav>
+    <main>
+        <section id="background-video">
+            <video src="WhatsApp Video 2026-04-28 at 10.26.07.mp4" loop autoplay></video>
+        </section>
+        <section id="name"><h1>Electronic Mart</h1></section>
+        <section id="electronic-devices">
+             <h2 id="electronic-devices-id">ELECTRONIC DEVICES</h2>
+            <div>
+                <div id="laptop">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-g6ZWExP8t8Xl2bG0E4cM4mxjJYZ525ZrLQ&s" alt="laptop">
+                <div class="product-info">
+                    <h4 align="center">Name:Mac Air</h4>
+                    <h4 align="center">Price: $2000</h4>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum incidunt illum distinctio voluptate sequi quos exercitationem cupiditate omnis sit recusandae nobis, animi totam officia consectetur minus, accusantium, nesciunt nisi id.</p>
+                </div>
+                <div class="btn-container">
+                    <button>Buy</button>
+                    <button>Add to cart</button>
+                </div>
+                </div>
+            </div>
+            <div>
+            </div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </section>
+        <section>
+        <aside>
+            <img src="https://www.svgrepo.com/show/475700/youtube-color.svg" alt="youtube-logo" >
+            <img src="https://www.svgrepo.com/show/475633/apple-color.svg" alt="apple-logo">
+            <img src="https://www.svgrepo.com/show/475634/amazon-color.svg" alt="amazon-logo">
+        </aside>
+        </section>
+    </main>
+</body>
+</html>

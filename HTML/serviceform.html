@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Request Form</title>
+</head>
+<body>
+    <form action="/submit-service-request" method="POST">
+        <h2>Service Request Form</h2>
+
+  <!-- Customer Name -->
+  <div>
+    <label for="customerName">Customer Name:</label><br>
+    <input type="text" id="customerName" name="customerName" placeholder="Enter your full name" required>
+  </div><br>
+
+  <!-- Contact Number -->
+  <div>
+    <label for="contactNumber">Contact Number:</label><br>
+    <input type="tel" id="contactNumber" name="contactNumber" placeholder="123-456-7890" required>
+  </div><br>
+
+  <!-- Issue Type (Dropdown) -->
+  <div>
+    <label for="issueType">Issue Type:</label><br>
+    <select id="issueType" name="issueType" required>
+      <option value="">-- Please select an issue --</option>
+      <option value="laptop-repair">Laptop Repair</option>
+      <option value="internet-issue">Internet Connection Issue</option>
+      <option value="software-install">Software Installation</option>
+      <option value="other">Other</option>
+    </select>
+  </div><br>
+
+  <!-- Description (Textarea) -->
+  <div>
+    <label for="description">Description of Issue:</label><br>
+    <textarea id="description" name="description" rows="4" cols="30" placeholder="Please provide details..."></textarea>
+  </div><br>
+
+  <!-- Priority (Radio Buttons) -->
+  <div>
+    <label>Priority:</label><br>
+    <input type="radio" id="low" name="priority" value="low" checked>
+    <label for="low">Low</label>
+    
+    <input type="radio" id="medium" name="priority" value="medium">
+    <label for="medium">Medium</label>
+    
+    <input type="radio" id="high" name="priority" value="high">
+    <label for="high">High</label>
+  </div><br>
+
+  <!-- Submit Button -->
+  <button type="submit">Submit Request</button>
+</form>

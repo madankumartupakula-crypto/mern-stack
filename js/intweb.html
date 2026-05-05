@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Signup & Login UI</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body{
+            color:white;
+        }
+
+        .page{
+            display:none;
+            height:100vh;
+            justify-content:center;
+            align-items:center;
+        }
+
+        .active{
+            display:flex;
+        }
+
+        /* HOME */
+        #homePage{
+            background:url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e");
+            background-size:cover;
+        }
+
+        /* SIGNUP */
+        #signupPage{
+            background:url("https://images.unsplash.com/photo-1522202176988-66273c2fd55f");
+            background-size:cover;
+        }
+
+        /* LOGIN */
+        #loginPage{
+            background:url("https://images.unsplash.com/photo-1498050108023-c5249f4df085");
+            background-size:cover;
+        }
+
+        .box{
+            background:rgba(0,0,0,0.7);
+            padding:30px;
+            border-radius:20px;
+            width:320px;
+            text-align:center;
+        }
+
+        input{
+            width:100%;
+            padding:12px;
+            margin:10px 0;
+            border-radius:10px;
+            border:none;
+        }
+
+        button{
+            padding:12px;
+            width:100%;
+            border:none;
+            border-radius:20px;
+            background:linear-gradient(45deg,#ff512f,#dd2476);
+            color:white;
+            cursor:pointer;
+        }
+
+        .success{color:lightgreen;}
+        .error{color:red;}
+    </style>
+</head>
+
+<body>
+
+<!-- HOME -->
+<div id="homePage" class="page active">
+    <div class="box">
+        <h1>Welcome</h1>
+        <button onclick="openSignup()">Sign Up</button>
+    </div>
+</div>
+
+<!-- SIGNUP -->
+<div id="signupPage" class="page">
+    <div class="box">
+        <h2>Sign Up</h2>
+        <input type="text" id="name" placeholder="Name">
+        <input type="email" id="email" placeholder="Email">
+        <input type="password" id="password" placeholder="Password">
+        <input type="password" id="confirmPassword" placeholder="Confirm Password">
+
+        <button onclick="createAccount()">Create Account</button>
+        <p id="signupMsg"></p>
+    </div>
+</div>
+
+<!-- LOGIN -->
+<div id="loginPage" class="page">
+    <div class="box">
+        <h2>Login</h2>
+        <input type="email" id="loginEmail" placeholder="Email">
+        <input type="password" id="loginPassword" placeholder="Password">
+
+        <button onclick="login()">Login</button>
+        <p id="loginMsg"></p>
+    </div>
+</div>
+
+<script>
+let savedEmail = "";
+let savedPassword = "";
+
+// open signup
+function openSignup(){
+    showPage("signupPage");
+}
+
+// show pages
+function showPage(pageId){
+    document.querySelectorAll(".page").forEach(p => p.classList.remove("active"));
+    document.getElementById(pageId).classList.add("active");
+}
+
+// create account
+function createAccount(){
+    let email = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
+    let confirmPassword = document.getElementById("confirmPassword").value;
+    let msg = document.getElementById("signupMsg");
+
+    if(email=="" || password=="" || confirmPassword==""){
+        msg.innerHTML="Fill all details";
+        msg.className="error";
+    }
+    else if(password.length < 6){
+        msg.innerHTML="Password must be 6+ characters";
+        msg.className="error";
+    }
+    else if(password != confirmPassword){
+        msg.innerHTML="Passwords not match";
+        msg.className="error";
+    }
+    else{
+        msg.innerHTML="Account Created ✅ Redirecting...";
+        msg.className="success";
+
+        // store user data
+        savedEmail = email;
+        savedPassword = password;
+
+        // redirect after 2 seconds
+        setTimeout(() => {
+            showPage("loginPage");
+        }, 2000);
+    }
+}
+
+// login
+function login(){
+    let email = document.getElementById("loginEmail").value;
+    let password = document.getElementById("loginPassword").value;
+    let msg = document.getElementById("loginMsg");
+
+    if(email == savedEmail && password == savedPassword){
+        msg.innerHTML="Login Successful 🎉";
+        msg.className="success";
+    } else {
+        msg.innerHTML="Invalid credentials";
+        msg.className="error";
+    }
+}
+</script>
+
+</body>
+</html>
